@@ -1,0 +1,20 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/list">Ingredients</a></li>
+    <li class="breadcrumb-item active">Edit</li>
+</ol>
+<h1 class="display-4">Edit Ingredient</h1>
+<form method="post" action="/update">
+    <div class="form-group">
+        <label for="title">Ingredient ID</label>
+        <input type="text" name="id" class="form-control" readonly value="<%= ingredient.id %>">
+    </div>
+    <div class="form-group">
+        <label for="title">Ingredient Name</label>
+        <input type="text" name="ingredientName" class="form-control" value="<%= ingredient.ingredientName %>">
+    </div>
+    <div class="form-group">
+        <label for="title">Quantity-on-hand</label>
+        <input type="number" name="ingredientQoh" class="form-control" value="<%= ingredient.ingredientQoh %>">
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>

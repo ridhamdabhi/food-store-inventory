@@ -1,0 +1,27 @@
+<h1 class="display-4">Ingredients Portal: Ingredients</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ingredient ID</th>
+            <th>Ingredient Name</th>
+            <th>Quantity-on-hand</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% ingredients.forEach(function(ingredient){ %>
+            <tr>
+                <td><%= ingredient.id %></td>
+                <td><%= ingredient.ingredientName %></td>
+                <td><%= ingredient.ingredientQoh %></td>
+                <td>
+                    <!--<a href="/ingredients/edit/<%= ingredient.ingredientId %>" class="btn btn-primary">Edit</a>-->
+                    <form class="d-inline" action="/edit" method="post">
+                        <input type="submit" value="Edit" class="btn btn-primary">
+                        <input type="hidden" name="id" value="<%= ingredient.id %>">
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
